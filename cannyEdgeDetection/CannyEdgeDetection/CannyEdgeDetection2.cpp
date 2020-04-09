@@ -43,8 +43,9 @@ void CannyThreshold(int, void*)
 /** @function main */
 int main(int argc, char** argv)
 {
+	const char* imgFilename = "C:\\Users\\vyomkesh\\Documents\\UF\\S4\\Individual Study\\cannyEdgeDetection\\building.jpg";
 	/// Load an image
-	src = imread(argv[1]);
+	src = imread(imgFilename);
 
 	if (!src.data)
 	{

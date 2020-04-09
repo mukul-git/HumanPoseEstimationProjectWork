@@ -1,14 +1,25 @@
-﻿# CMakeList.txt : Top-level CMake project file, do global configuration
-# and include sub-projects here.
+﻿# CMakeList.txt : CMake project for CannyEdgeDetection, include source and define
+# project specific logic here.
 #
 cmake_minimum_required (VERSION 3.8)
 
-project (CannyEdgeDetection)
-set ( OPENCV_INCLUDE_DIRS "$ENV{OPENCV_PATH}/build/include" )
+find_package( OpenCV REQUIRED )
 
-# Include sub-projects.
-add_subdirectory ("CannyEdgeDetection")
+message ( "OpenCV lib details:" ${OpenCV_LIBS} ${OpenCV_INCLUDE_DIRS} )
+include_directories( ${OpenCV_INCLUDE_DIRS} )
 
-link_directories( ${OPENCV_INCLUDE_DIRS} )
-# TODO: Add tests and install targets if needed.
-#install(TARGETS CannyEdgeDetection DESTINATION bin)
+
+# Add source to this project's executable.
+add_executable (CannyEdgeDetection "CannyEdgeDetection2.cpp" )
+target_link_libraries( CannyEdgeDetection ${OpenCV_LIBS} )
+
+
+#add_executable (CannyEdgeDetection "CannyEdgeDetection1.cpp"  "CannyEdgeDetection.h")
+#target_link_libraries( CannyEdgeDetection ${OpenCV_LIBS} )
+
+
+
+
+
+
+

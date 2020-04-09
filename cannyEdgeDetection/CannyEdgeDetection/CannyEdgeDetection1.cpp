@@ -3,6 +3,11 @@
 
 #include "CannyEdgeDetection.h"
 
+#include "opencv2/imgproc/imgproc.hpp"
+#include "opencv2/highgui/highgui.hpp"
+#include <stdlib.h>
+#include <stdio.h>
+
 #include <cv.h>
 #include <highgui.h>
 #include <math.h>
@@ -12,14 +17,14 @@ using namespace cv;
 int main(int argc, char** argv)
 {
 	Mat img, gray;
-	if (argc != 2 && !(img = imread(argv[1], 1)).data)
+	if (argc != 2 && !(img = imread("C:\\Users\\vyomkesh\\Documents\\UF\\S4\\Individual Study\\cannyEdgeDetection\\building.jpg", 1)).data)
 		return -1;
 	cvtColor(img, gray, CV_BGR2GRAY);
 	// smooth it, otherwise a lot of false circles may be detected
 	GaussianBlur(gray, gray, Size(9, 9), 2, 2);
-	vector<Vec3f> circles;
+	std::vector<Vec3f> circles;
 	HoughCircles(gray, circles, CV_HOUGH_GRADIENT,
-		2, gray->rows / 4, 200, 100);
+		2, gray.rows / 4, 200, 100);
 	for (size_t i = 0; i < circles.size(); i++)
 	{
 		Point center(cvRound(circles[i][0]), cvRound(circles[i][1]));

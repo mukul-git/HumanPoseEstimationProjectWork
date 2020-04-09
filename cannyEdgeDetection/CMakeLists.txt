@@ -1,8 +1,9 @@
-cmake_minimum_required(VERSION 3.5)
+﻿# CMakeList.txt : Top-level CMake project file, do global configuration
+# and include sub-projects here.
+#
+cmake_minimum_required (VERSION 3.8)
 
-project(cannyEdgeDetection LANGUAGES CXX)
+project ("CannyEdgeDetection")
 
-set(CMAKE_CXX_STANDARD 11)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-
-add_executable(cannyEdgeDetection main.cpp)
+# Include sub-projects.
+add_subdirectory ("CannyEdgeDetection")
