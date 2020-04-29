@@ -17,7 +17,8 @@ using namespace cv;
 int main(int argc, char** argv)
 {
 	Mat img, gray;
-	if (argc != 2 && !(img = imread("C:\\Users\\vyomkesh\\Documents\\UF\\S4\\Individual Study\\cannyEdgeDetection\\building.jpg", 1)).data)
+	const char* imgFilename = "C:\\Users\\vyomkesh\\Documents\\UF\\S4\\Individual Study\\HumanPoseEstimationProjectWork\\cannyEdgeDetection\\building.jpg";
+	if (argc != 2 && !(img = imread(imgFilename, 1)).data)
 		return -1;
 	cvtColor(img, gray, CV_BGR2GRAY);
 	// smooth it, otherwise a lot of false circles may be detected

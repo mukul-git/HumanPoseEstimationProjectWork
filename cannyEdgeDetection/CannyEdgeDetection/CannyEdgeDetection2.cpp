@@ -1,13 +1,25 @@
-
-
 #include "opencv2/imgproc/imgproc.hpp"
 #include "opencv2/highgui/highgui.hpp"
 #include <stdlib.h>
 #include <stdio.h>
+#include <stdarg.h>
+#include <iostream>
+#include <filesystem>
+#include <string.h>
 
+/*
+#define STRING(s) #s
+
+#ifdef SOURCE_ROOT_DIR
+#define SOURCE_PATH  SOURCE_ROOT_DIR/../building.jpg
+
+#else
+	#define SOURCE_PATH "Buzz"
+#endif
+*/
 
 using namespace cv;
-
+namespace fs = std::experimental::filesystem;
 /// Global variables
 
 Mat src, src_gray;
@@ -43,7 +55,13 @@ void CannyThreshold(int, void*)
 /** @function main */
 int main(int argc, char** argv)
 {
-	const char* imgFilename = "C:\\Users\\vyomkesh\\Documents\\UF\\S4\\Individual Study\\cannyEdgeDetection\\building.jpg";
+	/*
+	fs::path p = fs::canonical(fs::path(STRING(SOURCE_PATH)));
+	 std::cout << "Current path is " << fs::current_path() << __FILE__<< '\n'
+			<< "Canonical path for " << p.relative_path().string() << " is " << p.string() << '\n';
+	 const char* imgFilename = p.string().c_str();// new char(p.string.size());//p.string().c_str() */
+	 const char* imgFilename = "C:\\Users\\vyomkesh\\Documents\\UF\\S4\\Individual Study\\HumanPoseEstimationProjectWork\\cannyEdgeDetection\\building.jpg";
+	 //stcpy(imgFilename, p.string().c_str())
 	/// Load an image
 	src = imread(imgFilename);
 

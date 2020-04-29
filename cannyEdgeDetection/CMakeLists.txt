@@ -7,3 +7,15 @@ project ("CannyEdgeDetection")
 
 # Include sub-projects.
 add_subdirectory ("CannyEdgeDetection")
+
+#SET(SOURCE_ROOT_DIR ${CMAKE_CURRENT_SOURCE_DIR})
+
+
+
+#message(STATUS "Buzz" ${SOURCE_ROOT_DIR} ${CMAKE_CURRENT_SOURCE_DIR})
+
+#get_cmake_property(_variableNames VARIABLES)
+#list (SORT _variableNames)
+#foreach (_variableName ${_variableNames})
+#    message(STATUS "${_variableName}=${${_variableName}}")
+#endforeach()
