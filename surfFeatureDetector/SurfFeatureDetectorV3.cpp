@@ -15,8 +15,11 @@ const char* keys =
 int main(int argc, char* argv[])
 {
 	CommandLineParser parser(argc, argv, keys);
-	Mat img1 = imread("C:\\Users\\vyomkesh\\Documents\\UF\\S4\\Individual Study\\HumanPoseEstimationProjectWork\\surfFeatureDetector\\checkerboardOrientation1.png");
-	Mat img2 = imread("C:\\Users\\vyomkesh\\Documents\\UF\\S4\\Individual Study\\HumanPoseEstimationProjectWork\\surfFeatureDetector\\checkerboardOrientation2.png");
+	//Mat img1 = imread("C:\\Users\\vyomkesh\\Documents\\UF\\S4\\Individual Study\\HumanPoseEstimationProjectWork\\surfFeatureDetector\\resources\\images\\box.png");
+	//Mat img2 = imread("C:\\Users\\vyomkesh\\Documents\\UF\\S4\\Individual Study\\HumanPoseEstimationProjectWork\\surfFeatureDetector\\resources\\images\\box_in_scene.png");
+	Mat img1 = imread("C:\\Users\\vyomkesh\\Documents\\UF\\S4\\Individual Study\\HumanPoseEstimationProjectWork\\surfFeatureDetector\\resources\\images\\checkerboardOrientation1.png");
+	Mat img2 = imread("C:\\Users\\vyomkesh\\Documents\\UF\\S4\\Individual Study\\HumanPoseEstimationProjectWork\\surfFeatureDetector\\resources\\images\\checkerboardOrientation2.png");
+	
 	if (img1.empty() || img2.empty())
 	{
 		cout << "Could not open or find the image!\n" << endl;
